@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>bootstrap4</title>
+    
+    <!-- SummerNote Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    
+    <!-- SummerNote css, js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+  </head>
+  
+  <body>
+  
+    <div id="summernote"></div>
+    <script>
+    /* jquery 
+    $ - jquery
+    # - id를 찾을게요
+    $('#summernote') - id가 summernote인 애를 찾습니다.
+	javascript - document.getElementById('summnernote') */ 
+    
+      $('#summernote').summernote({
+        placeholder: 'Hello bootstrap 4',
+        tabsize: 2,
+        height: 500
+      });
+    
+    function getCode() {
+    	var markupStr = $('#summernote').summernote('code');
+    	console.log(markupStr);
+    }
+    
+    function 저장() {
+    	// summernote에서 코드 받아오고
+    	// db로 전송
+    }
+    </script>
+    
+    <button class="btn btn-primary" onclick="getCode()">TEST</button>
+    
+  </body>
+</html>

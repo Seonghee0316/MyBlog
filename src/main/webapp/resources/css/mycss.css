@@ -1,0 +1,8 @@
+	
+.txt_bar {
+    display: inline-block;
+    width: 1px;
+    height: 9px;
+    margin: 0 5px;
+    background-color: #afaeae;			/* #ebebeb */
+}

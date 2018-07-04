@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "member.mybatis">
+	<!-- 로그인 -->
+	<select id="login" resultType="String" parameterType="hashmap">
+		SELECT pwd FROM blog_member
+			WHERE email = #{email}
+	</select>
+	
+	<!-- 정보 가져오기 -->
+	<select id="getmember" resultType="member" parameterType="hashmap">
+		SELECT * FROM blog_member
+			WHERE email = #{email}
+	</select>
+	
+	<!-- 이메일 중복체크 -->
+	<select id="emailcheck" resultType="map" parameterType="hashmap">
+		SELECT email FROM blog_member
+			WHERE email = #{email}
+	</select>
+
+	<select id="getNextNumber" resultType="int">
+		select blog_memberseq.nextval from dual
+	</select>
+	
+	<!-- 회원 등록 -->
+	<insert id="insertMember" parameterType="Member">
+		insert into blog_member(num,email,pwd,name,gender,birthday,joindate,profile)
+    values(#{num},#{email},#{pwd},#{name},#{gender},#{birthday},to_char(sysdate,'yyyy.mm.dd hh24:mi'),#{profile})	
+	</insert>
+	
+	<update id="myPageUp" parameterType="Member">
+		update blog_member set name=#{name},profile=#{profile} where num =#{num}
+	</update>
+	
+	<delete id="deregister" parameterType="hashmap">
+		delete from blog_member where num=#{num}
+	</delete>
+	
+	<update id="changePw" parameterType="hashmap">
+		update blog_member set pwd=#{pwd} where num=#{num}
+	</update>
+	
+	<select id="getMembers" resultType="Member">
+		<!-- select num,email,pwd,name,gender,birthday,joindate,profile  from blog_member -->
+		select num,email,pwd,name,gender,birthday,joindate,profile  from blog_member
+		<!-- *도 됨! -->
+	</select>
+	
+	<select id="pwCheck" parameterType="hashmap" resultType="int">
+		select nvl(count(*),0) from blog_member where email= #{email} and birthday= #{birthday}
+	</select>
+	
+	<update id="update_pwd" parameterType="hashmap">
+		update blog_member set pwd=#{pwd} where email = #{email}
+	</update>
+	
+	<select id="getName" parameterType="hashmap" resultType="String">
+		select name from blog_member where email =#{email}
+	</select>
+	
+		<select id="getPwd" parameterType="hashmap" resultType="String">
+		select pwd from blog_member where email =#{email}
+	</select>
+</mapper>

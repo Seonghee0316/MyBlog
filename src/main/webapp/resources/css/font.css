@@ -1,0 +1,44 @@
+/* @font-face{ 
+	font-family:'NanumGothicRegular'; 
+	src:url('fonts/NanumGothicRegular.eot'); 
+	src:url('fonts/NanumGothicRegular.eot?#iefix') format(¡®embedded-opentype¡¯), 
+		url('fonts/NanumGothicRegular.woff') format(¡®woff¡¯),
+		url('fonts/NanumGothicRegular.ttf') format('truetype'); 
+	font-weight: normal; font-style: normal; 
+} 
+
+@font-face{
+	font-family:'NanumGothicBold';
+	src:url('fonts/NanumGothicBold.eot'); 
+	src:url('fonts/NanumGothicBold.eot?#iefix') format(¡®embedded-opentype¡¯),
+		url('fonts/NanumGothicBold.woff') format(¡®woff¡¯), 
+		url('fonts/NanumGothicBold.ttf') format('truetype'); 
+} 
+
+@font-face{
+	font-family:'NanumGothicItalic'; 
+	src:url('fonts/NanumGothicItalic.eot'); 
+	src:url('fonts/NanumGothicItalic.eot?#iefix') format(¡®embedded-opentype¡¯), 
+		url('fonts/NanumGothicItalic.woff') format(¡®woff¡¯), 
+		url('fonts/NanumGothicItalic.ttf') format('truetype'); 
+}
+
+p { 
+	font-family: NanumGothicRegular; 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+
+em { 
+	font-family: NanumGothicItalic; 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+
+strong {
+	font-family: NanumGothicBold; 
+	font-style: normal; 
+	font-weight: normal; 
+}
+ */
+
