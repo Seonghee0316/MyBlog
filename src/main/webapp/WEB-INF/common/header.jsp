@@ -106,7 +106,7 @@ $(document).ready(function() {
 				              <c:if test="${not empty profile}">
 				                <img src="${pageContext.servletContext.contextPath}/fileSave/${profile}" style="width:100%; max-height: 200px;">
 				             </c:if>
-				          <h3><a class="nav-link" href="#">${name}</a></h3>
+				          <h3><a class="nav-link" href="${pageContext.request.contextPath}/member/myPage">${name}</a></h3>
 				          <!-- <p>오늘도 파이팅!</p> -->
 				          <!-- <a class="nav-link">Mypage</a> -->
 			          </div>
